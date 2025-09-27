@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(cookieParser());
 
 // MongoDB connection
-mongoose.connect('mongodb://localhost:27017/supplier-product-db', {
+mongoose.connect('mongodb://localhost:27017/cookie-session-auth-db', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -23,7 +23,7 @@ app.use(
     secret: 'mysecretkey',
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/supplier-product-db' }),
+    store: MongoStore.create({ mongoUrl: 'mongodb://localhost:27017/cookie-session-auth-db' }),
     cookie: {
       httpOnly: true,     // prevents client-side JS from reading cookie
       secure: false,      // set `true` if using HTTPS
